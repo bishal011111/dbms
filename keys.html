@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Database Keys</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Database Keys</h1>
+    </header>
+    <main>
+        <section>
+            <h2>1. Primary Key</h2>
+            <p>Definition: A unique identifier for a record in a table. Each table can have only one primary key, and it cannot contain NULL values.</p>
+            <table>
+                <tr>
+                    <th>StudentID</th>
+                    <th>Name</th>
+                    <th>Age</th>
+                    <th>Email</th>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>Alice</td>
+                    <td>20</td>
+                    <td>alice@example.com</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>Bob</td>
+                    <td>22</td>
+                    <td>bob@example.com</td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>Charlie</td>
+                    <td>23</td>
+                    <td>charlie@example.com</td>
+                </tr>
+            </table>
+            <p>Primary Key: StudentID</p>
+        </section>
+
+        <section>
+            <h2>2. Foreign Key</h2>
+            <p>Definition: A field (or a set of fields) in one table that uniquely identifies a row of another table. The foreign key is used to establish and enforce a link between the data in the two tables.</p>
+            <h3>Students Table:</h3>
+            <table>
+                <tr>
+                    <th>StudentID</th>
+                    <th>Name</th>
+                    <th>Age</th>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>Alice</td>
+                    <td>20</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>Bob</td>
+                    <td>22</td>
+                </tr>
+            </table>
+            <h3>Enrollments Table:</h3>
+            <table>
+                <tr>
+                    <th>EnrollmentID</th>
+                    <th>StudentID</th>
+                    <th>CourseID</th>
+                </tr>
+                <tr>
+                    <td>101</td>
+                    <td>1</td>
+                    <td>1001</td>
+                </tr>
+                <tr>
+                    <td>102</td>
+                    <td>2</td>
+                    <td>1002</td>
+                </tr>
+            </table>
+            <p>Foreign Key in Enrollments Table: StudentID (references StudentID in Students Table)</p>
+        </section>
+
+        <section>
+            <h2>3. Composite Key</h2>
+            <p>Definition: A key that consists of two or more columns to uniquely identify a record in a table.</p>
+            <table>
+                <tr>
+                    <th>OrderID</th>
+                    <th>ProductID</th>
+                    <th>Quantity</th>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>100</td>
+                    <td>2</td>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>101</td>
+                    <td>1</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>100</td>
+                    <td>1</td>
+                </tr>
+            </table>
+            <p>Composite Key: (OrderID, ProductID)</p>
+        </section>
+
+        <section>
+            <h2>4. Candidate Key</h2>
+            <p>Definition: A field or combination of fields that can qualify as a unique key in a table. There can be multiple candidate keys in a table.</p>
+            <table>
+                <tr>
+                    <th>EmployeeID</th>
+                    <th>SSN</th>
+                    <th>Email</th>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>123-45-6789</td>
+                    <td>alice@example.com</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>987-65-4321</td>
+                    <td>bob@example.com</td>
+                </tr>
+            </table>
+            <p>Candidate Keys: EmployeeID, SSN</p>
+        </section>
+
+        <section>
+            <h2>5. Alternate Key</h2>
+            <p>Definition: A candidate key that is not chosen as the primary key.</p>
+            <table>
+                <tr>
+                    <th>EmployeeID</th>
+                    <th>SSN</th>
+                    <th>Email</th>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>123-45-6789</td>
+                    <td>alice@example.com</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>987-65-4321</td>
+                    <td>bob@example.com</td>
+                </tr>
+            </table>
+            <p>Primary Key: EmployeeID</p>
+            <p>Alternate Key: SSN</p>
+        </section>
+
+        <section>
+            <h2>6. Artificial Key</h2>
+            <p>Definition: A key created solely for the purpose of uniquely identifying records in a table, often when no natural primary key exists. Also known as a surrogate key.</p>
+            <table>
+                <tr>
+                    <th>CustomerID</th>
+                    <th>CustomerNumber</th>
+                    <th>Name</th>
+                    <th>Email</th>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>C001</td>
+                    <td>Alice</td>
+                    <td>alice@example.com</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>C002</td>
+                    <td>Bob</td>
+                    <td>bob@example.com</td>
+                </tr>
+            </table>
+            <p>Artificial Key: CustomerID</p>
+        </section>
+
+        <p>These keys help in maintaining data integrity, establishing relationships, and ensuring the uniqueness of records within a database.</p>
+    </main>
+</body>
+</html>
