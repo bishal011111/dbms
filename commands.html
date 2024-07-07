@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="commands.css">
+    <title>SQL Commands</title>
+</head>
+<body>
+    <div class="container">
+        <h1>SQL Commands</h1>
+        <hr>
+        <section>
+            <h2>1. CREATE</h2>
+            <p>Description: The CREATE command is used to create a new database object, such as a table, view, index, or stored procedure.</p>
+            <pre><code>CREATE TABLE Employees (
+    EmployeeID int,
+    FirstName varchar(255),
+    LastName varchar(255),
+    BirthDate date,
+    Position varchar(255)
+);</code></pre>
+            <p>This example creates a new table named Employees.</p>
+        </section>
+        <hr>
+        <section>
+            <h2>2. DROP</h2>
+            <p>Description: The DROP command is used to delete a database object permanently, such as a table, view, index, or database.</p>
+            <pre><code>DROP TABLE Employees;</code></pre>
+            <p>This example deletes the Employees table and all its data.</p>
+        </section>
+        <hr>
+        <section>
+            <h2>3. ALTER</h2>
+            <p>Description: The ALTER command is used to modify an existing database object, such as a table, by adding, deleting, or modifying columns and constraints.</p>
+            <pre><code>ALTER TABLE Employees
+ADD Email varchar(255);</code></pre>
+            <p>This example adds a new column named Email to the Employees table.</p>
+        </section>
+        <hr>
+        <section>
+            <h2>4. ADD</h2>
+            <p>Description: The ADD command is typically used with the ALTER command to add a new column or constraint to an existing table.</p>
+            <pre><code>ALTER TABLE Employees
+ADD PhoneNumber varchar(20);</code></pre>
+            <p>This example adds a new column named PhoneNumber to the Employees table.</p>
+        </section>
+        <hr>
+        <section>
+            <h2>5. UPDATE</h2>
+            <p>Description: The UPDATE command is used to modify existing records in a table.</p>
+            <pre><code>UPDATE Employees
+SET Position = 'Manager'
+WHERE EmployeeID = 1;</code></pre>
+            <p>This example updates the Position of the employee with EmployeeID 1 to 'Manager'.</p>
+        </section>
+        <hr>
+        <section>
+            <h2>6. SET</h2>
+            <p>Description: The SET command is used in the UPDATE statement to specify the column that should be modified and the value it should be set to.</p>
+            <pre><code>UPDATE Employees
+SET LastName = 'Smith'
+WHERE EmployeeID = 2;</code></pre>
+            <p>This example sets the LastName of the employee with EmployeeID 2 to 'Smith'.</p>
+        </section>
+        <hr>
+        <section>
+            <h2>7. INSERT</h2>
+            <p>Description: The INSERT command is used to add new records into a table.</p>
+            <pre><code>INSERT INTO Employees (EmployeeID, FirstName, LastName, BirthDate, Position)
+VALUES (3, 'Jane', 'Doe', '1990-05-15', 'Developer');</code></pre>
+            <p>This example inserts a new record into the Employees table.</p>
+        </section>
+        <hr>
+        <section>
+            <h2>8. SELECT</h2>
+            <p>Description: The SELECT command is used to retrieve data from one or more tables.</p>
+            <pre><code>SELECT FirstName, LastName
+FROM Employees
+WHERE Position = 'Developer';</code></pre>
+            <p>This example retrieves the FirstName and LastName of all employees who are developers.</p>
+        </section>
+        <hr>
+        <p>These commands form the basic building blocks of SQL and are essential for creating, modifying, and querying database objects and data.</p>
+    </div>
+</body>
+</html>
