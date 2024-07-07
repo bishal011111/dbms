@@ -1,0 +1,91 @@
+-- 1. Create the movie database
+CREATE DATABASE movie_db;
+USE movie_db;
+
+-- a. Create table movie_list
+CREATE TABLE movie_list (
+    mid INT PRIMARY KEY,
+    name VARCHAR(255),
+    genre VARCHAR(255),
+    year_made INT,
+    budget DECIMAL(10, 2)
+);
+
+-- b. Add five data to the movie_list table
+INSERT INTO movie_list (mid, name, genre, year_made, budget) VALUES
+    (1, 'The Shawshank Redemption', 'Drama', 1994, 25000000),
+    (2, 'The Godfather', 'Crime', 1972, 6000000),
+    (3, 'The Dark Knight', 'Action', 2008, 185000000),
+    (4, 'Pulp Fiction', 'Crime', 1994, 8000000),
+    (5, 'Inception', 'Sci-Fi', 2010, 160000000);
+
+-- c. Retrieve all the information from the movie_list table
+SELECT * FROM movie_list;
+
+-- d. Update the genre to action
+UPDATE movie_list SET genre = 'Action' WHERE genre = 'Drama';
+
+-- e. Delete the data where the genre is thriller
+DELETE FROM movie_list WHERE genre = 'Thriller';
+
+-- 2. Write database name and draw table with records of 5 clients 
+CREATE DATABASE clients;
+USE clients;
+
+-- b. Create table client_info
+CREATE TABLE client_info (
+    client_id INT PRIMARY KEY,
+    client_name VARCHAR(255),
+    client_address VARCHAR(255),
+    dateofpurchase DATE
+);
+
+-- c. Modify the table client_info by adding column contact_info
+ALTER TABLE client_info
+ADD contact_info VARCHAR(255);
+
+-- d. Modify the table client_info by changing the type varchar of client_address column to text
+ALTER TABLE client_info
+MODIFY COLUMN client_address TEXT;
+
+-- e. Drop the column client_address from the client_info table
+ALTER TABLE client_info
+DROP COLUMN client_address;
+
+-- f. Insert at least five records in the client_info table
+INSERT INTO client_info (client_id, client_name, dateofpurchase, contact_info) VALUES
+    (1, 'John Doe', '2023-03-15', '123-456-7890'),
+    (2, 'Jane Smith', '2023-04-01', '987-654-3210'),
+    (3, 'David Lee', '2023-02-28', '555-1212'),
+    (4, 'Emily Brown', '2023-05-05', '111-222-3333'),
+    (5, 'Michael Wilson', '2023-06-10', '444-555-6666');
+
+-- g. Display all records from table client_info table
+SELECT * FROM client_info;
+
+-- h. Display record of a client whose id is 3
+SELECT * FROM client_info WHERE client_id = 3;
+
+-- i. Display all records from table client_info table in ascending order
+SELECT * FROM client_info ORDER BY client_id ASC;
+
+-- j. Display all records from table client_info table in descending order
+SELECT * FROM client_info ORDER BY client_id DESC;
+
+-- k. Update contact_no of client whose client_id is 1 to 9841999999
+UPDATE client_info SET contact_info = '9841999999' WHERE client_id = 1;
+
+-- l. Update client_name, client_address, contact_no using update command of at least one client
+UPDATE client_info SET client_name = 'Updated Name', contact_info = '111-222-3333' WHERE client_id = 2;
+
+-- m. Delete record of a client whose id is 1
+DELETE FROM client_info WHERE client_id = 1;
+
+-- n. Delete all records from the table client_info
+DELETE FROM client_info;
+
+-- o. Drop the table client_info
+DROP TABLE client_info;
+
+-- p. Drop the database client
+DROP DATABASE clients;
